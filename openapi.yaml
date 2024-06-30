@@ -10,7 +10,7 @@ components:
       type: http
       scheme: bearer
 paths:
-  130.162.195.228/mhs714220019/regis:
+  /mhs714220019/regis:
     post:
       tags:
         - default
@@ -29,7 +29,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  130.162.195.228/mhs714220019/login:
+  /mhs714220019/login:
     post:
       tags:
         - default
@@ -49,7 +49,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  130.162.195.228/mhs714220019courses:
+  /mhs714220019courses:
     get:
       tags:
         - default
@@ -78,7 +78,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  130.162.195.228/mhs714220019courses/1:
+  /mhs714220019courses/1:
     put:
       tags:
         - default
@@ -109,7 +109,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  130.162.195.228/mhs714220019students:
+  /mhs714220019students:
     get:
       tags:
         - default
@@ -140,7 +140,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  130.162.195.228/mhs714220019students/2:
+  /mhs714220019students/2:
     put:
       tags:
         - default
