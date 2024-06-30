@@ -93,8 +93,11 @@ servers:
 components:
   securitySchemes:
     bearerAuth:
-      type: https
+      type: http
       scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
 paths:
   /mhs714220019/students:
     get:
