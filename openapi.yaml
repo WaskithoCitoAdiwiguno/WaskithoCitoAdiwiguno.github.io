@@ -42,14 +42,12 @@ paths:
               example:
                 username: was
                 password: admin12345
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019courses:
+  /mhs714220019/courses:
     get:
       tags:
         - default
@@ -71,18 +69,22 @@ paths:
               example:
                 course_name: Pemograman 3
                 teacher: Budiansyah
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019courses/1:
+  /mhs714220019/courses/{id}:
     put:
       tags:
         - default
       summary: PutCourse
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -91,8 +93,6 @@ paths:
               example:
                 course_name: Pemograman 3
                 teacher: Yanto
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -102,14 +102,18 @@ paths:
       tags:
         - default
       summary: DeleteCourse
-      security:
-        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019students:
+  /mhs714220019/students:
     get:
       tags:
         - default
@@ -133,18 +137,22 @@ paths:
                 name: Reza
                 class: 2A
                 address: Bandung
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019students/2:
+  /mhs714220019/students/{id}:
     put:
       tags:
         - default
       summary: PutStudent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -155,8 +163,6 @@ paths:
                 name: Waskitho
                 class: 2A
                 address: Batu
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -166,8 +172,12 @@ paths:
       tags:
         - default
       summary: DeleteStudent
-      security:
-        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Successful response
