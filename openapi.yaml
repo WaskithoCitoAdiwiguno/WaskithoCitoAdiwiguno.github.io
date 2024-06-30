@@ -89,36 +89,84 @@ info:
     methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)
   version: 1.0.0
 servers:
-  - url: http://localhost:8082
+  - url: https://130.162.195.228
 components:
   securitySchemes:
-    oauth2Auth:
-      type: http
-      scheme: oauth2
     bearerAuth:
       type: http
       scheme: bearer
 paths:
-  /products:
+  /mhs714220019/students:
     get:
       tags:
-        - "Get data"
-      summary: "Get data"
-      description: |
-        This is a GET request and it is used to \"get\" data from an endpoint.
-        There is no request body for a GET request, but you can use query parameters
-        to help specify the resource you want data on (e.g., in this request, we have
-        id=1).
-        
-        A successful GET response will have a 200 OK status, and should include some
-        kind of response body - for example, HTML web content or JSON data.
+        - default
+      summary: Get data
+      description: >-
+        This is a GET request and it is used to "get" data from an endpoint.
+        There is no request body for a GET request, but you can use query
+        parameters to help specify the resource you want data on (e.g., in this
+        request, we have `id=1`).
+
+
+        A successful GET response will have a `200 OK` status, and should
+        include some kind of response body - for example, HTML web content or
+        JSON data.
       security:
-        - BearerAuth: []
+        - bearerAuth: []
       responses:
-        "200":
-          description: "Successful response"
+        '200':
+          description: Successful response
           content:
             application/json: {}
+    post:
+      tags:
+        - default
+      summary: Post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                course_id: 2
+                course_name: ''
+                teacher: Kiriko
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220019/login:
+    post:
+      tags:
+        - default
+      summary: Post login
+      description: >-
+        This is a POST request, submitting data to an API via the request body.
+        This request submits JSON data, and the data is reflected in the
+        response.
+
+
+        A successful POST request typically returns a `200 OK` or `201 Created`
+        response code.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: rezz
+                password: admin12345
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220019/students/8:
     put:
       tags:
         - default
@@ -139,9 +187,12 @@ paths:
             schema:
               type: object
               example:
-                id: 5
-                name: meja baja besi
-                price: 15000
+                course_id: 2
+                name: Anatedatipa
+                class: 2A
+                address: Bandung
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -159,57 +210,8 @@ paths:
 
         A successful DELETE request typically returns a `200 OK`, `202
         Accepted`, or `204 No Content` response code.
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: integer
-          example: '2'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - default
-      summary: Post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                name: meja baja
-                price: 15000
       security:
         - bearerAuth: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /login:
-    post:
-      tags:
-        - default
-      summary: Post login
-      description: >-
-        This is a POST request, submitting data to an API via the request body.
-        This request submits JSON data, and the data is reflected in the
-        response.
-
-
-        A successful POST request typically returns a `200 OK` or `201 Created`
-        response code.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                username: Add
-                password: aaaa
       responses:
         '200':
           description: Successful response
