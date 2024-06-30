@@ -96,8 +96,8 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-    security:
-      - bearerAuth: []
+  security:
+    - bearerAuth: []
 paths:
   /mhs714220019/students:
     get:
@@ -169,7 +169,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/students/8:
+  /mhs714220019/students/{id}:
     put:
       tags:
         - default
@@ -184,6 +184,12 @@ paths:
 
         A successful PUT request typically returns a `200 OK`, `201 Created`, or
         `204 No Content` response code.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -213,6 +219,12 @@ paths:
 
         A successful DELETE request typically returns a `200 OK`, `202
         Accepted`, or `204 No Content` response code.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
