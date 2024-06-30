@@ -24,6 +24,8 @@ paths:
                 username: rezz
                 password: admin12345
                 email: aaaa@gmail.com
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -42,6 +44,8 @@ paths:
               example:
                 username: was
                 password: admin12345
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -52,6 +56,8 @@ paths:
       tags:
         - default
       summary: Get Course
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -69,6 +75,8 @@ paths:
               example:
                 course_name: Pemograman 3
                 teacher: Budiansyah
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -93,6 +101,8 @@ paths:
               example:
                 course_name: Pemograman 3
                 teacher: Yanto
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -137,6 +147,8 @@ paths:
                 name: Reza
                 class: 2A
                 address: Bandung
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -163,6 +175,8 @@ paths:
                 name: Waskitho
                 class: 2A
                 address: Batu
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -178,6 +192,8 @@ paths:
           required: true
           schema:
             type: integer
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
