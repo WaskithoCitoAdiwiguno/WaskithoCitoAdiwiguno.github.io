@@ -7,7 +7,7 @@ servers:
 components:
   securitySchemes:
     bearerAuth:
-      type: http
+      type: https
       scheme: bearer
 paths:
   /regis:
