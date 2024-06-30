@@ -3,18 +3,18 @@ info:
   title: GoLearning
   version: 1.0.0
 servers:
-  - url: https://130.162.195.228
+  - url: "https://130.162.195.228/mhs714220019"
 components:
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
 paths:
-  /mhs714220019/regis:
+  /regis:
     post:
       tags:
         - default
-      summary: UserRegistration
+      summary: User Registration
       requestBody:
         content:
           application/json:
@@ -29,11 +29,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/login:
+  /login:
     post:
       tags:
         - default
-      summary: LoginUser
+      summary: Login User
       requestBody:
         content:
           application/json:
@@ -47,11 +47,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/courses:
+  /courses:
     get:
       tags:
         - default
-      summary: GetCourse
+      summary: Get Course
       responses:
         '200':
           description: Successful response
@@ -60,7 +60,7 @@ paths:
     post:
       tags:
         - default
-      summary: PostCourse
+      summary: Post Course
       requestBody:
         content:
           application/json:
@@ -74,11 +74,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/courses/{id}:
+  /courses/{id}:
     put:
       tags:
         - default
-      summary: PutCourse
+      summary: Put Course
       parameters:
         - name: id
           in: path
@@ -101,7 +101,7 @@ paths:
     delete:
       tags:
         - default
-      summary: DeleteCourse
+      summary: Delete Course
       parameters:
         - name: id
           in: path
@@ -113,11 +113,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/students:
+  /students:
     get:
       tags:
         - default
-      summary: GetStudent
+      summary: Get Student
       responses:
         '200':
           description: Successful response
@@ -126,7 +126,7 @@ paths:
     post:
       tags:
         - default
-      summary: PostStudent
+      summary: Post Student
       requestBody:
         content:
           application/json:
@@ -142,11 +142,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220019/students/{id}:
+  /students/{id}:
     put:
       tags:
         - default
-      summary: PutStudent
+      summary: Put Student
       parameters:
         - name: id
           in: path
@@ -171,7 +171,7 @@ paths:
     delete:
       tags:
         - default
-      summary: DeleteStudent
+      summary: Delete Student
       parameters:
         - name: id
           in: path
